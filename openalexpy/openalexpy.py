@@ -14,3 +14,18 @@ def works_query_from_doi(doi = "10.7861/clinmedicine.19-2-169", email = email_ad
     # accepts a doi and returns a url query string for OpenAlex
     url = f"https://api.openalex.org/works/doi:{doi}?mailto:{email_address}"
     return url
+
+testurl = works_query_from_doi()
+testlist = ["10.7861/clinmedicine.19-2-169"]
+
+def send_request_to_openalex(url = testurl):
+    try:
+        response = requests.get(url)
+        if response.ok:
+            metadata = response.json()
+            return metadata
+    except:
+        return f"Error with {url}"
+
+if __name__ == "__main__":
+    print(send_request_to_openalex())
