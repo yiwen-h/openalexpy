@@ -1,74 +1,10 @@
-# Data analysis
-- Document here the project: openalexpy
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# openalexpy
+# A Python package to gather bibliographic data from OpenAlex.
 
-Please document the project the better you can.
+For R version: https://github.com/massimoaria/openalexR
 
-# Startup the project
+The basic idea of openalexpy is to provide three main functions helping the user to:
 
-The initial setup.
-
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
-
-Unittest test:
-```bash
-make clean install test
-```
-
-Check for openalexpy in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/openalexpy`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "openalexpy"
-git remote add origin git@github.com:{group}/openalexpy.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-openalexpy-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/openalexpy` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/openalexpy.git
-cd openalexpy
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-openalexpy-run
-```
+- Create a query for OpenAlex using specific search criteria, which will be passed into a function
+- Send a request to the OpenAlex API to retrieve the results in JSON format
+- Transform the JSON into a dataframe or csv for further analysis
